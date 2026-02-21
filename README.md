@@ -12,9 +12,9 @@ The agent is designed as a guided workflow: it interviews the user, generates on
 `travel_agent.py` runs an end-to-end travel planning flow:
 1. Conversationally collects trip intent.
 2. Generates structured plans (single or compare mode).
-3. Surfaces conflicts and asks for your decisions.
+3. Surfaces conflicts and asks for user decisions.
 4. Fetches live flight pricing signals via SerpApi.
-5. Lets you pick preferred flight and hotel options.
+5. Supports user selection of preferred flight and hotel options.
 6. Handles multi-city hotel logic, including day-trip return prompts.
 7. Generates a travel itinerary PDF and saves session history.
 
@@ -45,7 +45,7 @@ The agent is designed as a guided workflow: it interviews the user, generates on
 
 ## Requirements
 
-- Python **3.10+** (your env: `tf_3_10_new`)
+- Python **3.10+**
 - DeepSeek API key
 - SerpApi key
 - macOS/Linux terminal (colorized CLI output)
@@ -60,14 +60,14 @@ Python packages (already in `requirements.txt`):
 ### 1. Create/activate environment
 
 ```bash
-conda activate tf_3_10_new
+conda activate travel-agent-env
 ```
 
 If needed, create it first:
 
 ```bash
-conda create -n tf_3_10_new python=3.10 -y
-conda activate tf_3_10_new
+conda create -n travel-agent-env python=3.10 -y
+conda activate travel-agent-env
 ```
 
 ### 2. Install dependencies
@@ -212,5 +212,4 @@ This helps render non-English text (for example Chinese/Arabic names and address
 - Add test fixtures for itinerary-to-hotel mapping logic.
 - Add caching of API calls to reduce cost and latency.
 - Add explicit timezone/date controls instead of relative offsets.
-
 
